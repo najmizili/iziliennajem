@@ -1,4 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+
 
 const Home = () => {
   return (
@@ -52,6 +55,17 @@ const Home = () => {
           font-weight: normal;
           margin: 0;
           color: azure;
+          font-size: 4vw;
+        }
+
+        @media (max-width: 768px) {
+          main {
+            flex-direction: column;
+          }
+        
+          .left-col, .right-col {
+            width: 100%;
+          }
         }
 
         .topdetail {
@@ -97,8 +111,20 @@ const Home = () => {
           display: flex;
           border-radius: .9em;
           gap: 4.2em;
-          padding: 5em;
+          padding: 5%;
           position: relative;
+        }
+
+        @media (max-width: 768px) {
+          .right-col {
+            grid-template-columns: 1fr;
+                                   "left";
+          }
+        }
+
+        @media (max-width: 768px) {
+          .pic {
+          }
         }
 
         .gg {
@@ -185,6 +211,11 @@ const Home = () => {
           background-image: url('clothing3.jpg');
         }
 
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+
         .card-detail {
           background-color: white;
           border-radius: .6em;
@@ -208,6 +239,10 @@ const Home = () => {
         .card-detail p {
           font-size: 13px;
           margin: 0;
+        }
+
+        p {
+          font-size: 2vw;
         }
 
         p.product-price {
@@ -278,14 +313,17 @@ const Home = () => {
             <h1>Now open to Raja fans</h1>
             <p className="topdetail">Green Club shirts and echapes are available to everyone inside Morocco .</p>
             <div className="cta-btns">
-              <a href="/y" className="primary-cta">Browse collection</a>
-              <a href="/category/MenKits" className="secondary-cta">
+        <Link to="/y" className="primary-cta">
+          Browse collection
+        </Link>
+        <Link to="/category/MenKits" className="secondary-cta">
                 <span>Home Kit 22/23</span>
                 <svg width="25" height="14" viewBox="0 0 25 14" fill="none">
                   <path d="M24.1166 7.8347C24.4644 7.49913 24.4743 6.9452 24.1387 6.59746L18.6703 0.930679C18.3347 0.582937 17.7808 0.573067 17.4331 0.908634C17.0853 1.2442 17.0755 1.79813 17.411 2.14587L22.2718 7.18301L17.2347 12.0438C16.8869 12.3794 16.8771 12.9333 17.2126 13.281C17.5482 13.6288 18.1021 13.6387 18.4499 13.3031L24.1166 7.8347ZM0.475379 7.6698L23.4935 8.07992L23.5246 6.3302L0.506555 5.92008L0.475379 7.6698Z" fill="black" />
                 </svg>
-              </a>
+                </Link>
             </div>
+            
             <div className="news">
               <p className="employees"></p>
               <p className="details"></p>
