@@ -63,5 +63,5 @@ const UserInformation = () => {
   );
 };
 
-// Exporta el componente UserInformation
+
 export default UserInformation;

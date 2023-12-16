@@ -35,8 +35,8 @@ const Admin = () => {
     }
   };
   const tableStyle = {
-    fontSize: '14px', // Adjust the font size to make the table smaller
-    margin: '0 auto', // Center the table horizontally
+    fontSize: '14px', 
+    margin: '0 auto', 
   };
   useEffect(() => {
     const verificarRol = async () => {

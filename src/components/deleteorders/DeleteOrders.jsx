@@ -11,13 +11,10 @@ const DeleteOrders = () => {
   const deleteOrdersForUser = async () => {
     try {
       if (user) {
-        // Obtener una referencia a la colección de órdenes del usuario
         const ordersCollection = collection(db, "usersOrders");
 
-        // Obtener todos los documentos de la colección de órdenes del usuario
         const ordersDocs = await getDocs(ordersCollection);
 
-        // Eliminar cada documento de la colección de órdenes del usuario
         const deletePromises = ordersDocs.docs.map(async (orderDoc) => {
           await deleteDoc(orderDoc.ref);
         });

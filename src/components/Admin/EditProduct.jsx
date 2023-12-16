@@ -41,7 +41,6 @@ const EditProduct = () => {
     getProduct();
   }, [db, productId]);
 
-  // Funciones de manejo de cambios
   const handleNameChange = (e) => {
     setProduct((prevProduct) => ({
       ...prevProduct,
@@ -88,7 +87,6 @@ const EditProduct = () => {
     return <p>Charging...</p>;
   }
 
-  // Función para guardar los cambios y que se modifiquen en la base de datos de Firebase
   const handleSaveChanges = async (e) => {
     e.preventDefault();
     try {
@@ -231,7 +229,6 @@ const EditProduct = () => {
             </div>
           </section>
         ) : (
-          // enviar al usuario a la página de login o a la home
           <p>Unauthenticated user</p>
         )}
       </section>

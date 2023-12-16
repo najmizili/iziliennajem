@@ -31,14 +31,14 @@ const Add = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [categories, setCategories] = useState([]);
 
-  // Obtener todas las categorías
+  
   useEffect(() => {
     const obtenerCategorias = async () => {
       try {
         const productsCollection = collection(db, "Products");
         const productsSnapshot = await getDocs(productsCollection);
 
-        // Obtener categorías únicas
+        
         const categoriaUnica = new Set();
         productsSnapshot.forEach((doc) => {
           const productData = doc.data();
@@ -56,7 +56,7 @@ const Add = () => {
     obtenerCategorias();
   }, [db]);
 
-  // Cargar nuevo producto a la base de datos de firebase
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { nombre, description, price, img, stock } = product;
@@ -79,7 +79,7 @@ const Add = () => {
     }
   };
 
-  // Funciones de manejo de cambios
+  
   const handleName = (e) => {
     setProduct((prevProduct) => ({
       ...prevProduct,
@@ -224,7 +224,7 @@ const Add = () => {
             </div>
           </section>
         ) : (
-          // enviar al usuario a la página de login o a la home
+           
           navigate("/")
         )}
       </section>

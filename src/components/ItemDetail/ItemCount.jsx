@@ -20,7 +20,7 @@ const ItemCount = ({ producto }) => {
     setAlertMessage(message);
     setTimeout(() => {
       setAlertMessage(null);
-    }, 2000); // Adjust the timeout as needed
+    }, 2000); 
   };
 
   const sumar = () => {

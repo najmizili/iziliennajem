@@ -1,0 +1,72 @@
+[debug] [2023-12-11T15:53:45.562Z] ----------------------------------------------------------------------
+[debug] [2023-12-11T15:53:45.565Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\lbira\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-12-11T15:53:45.565Z] CLI Version:   13.0.1
+[debug] [2023-12-11T15:53:45.565Z] Platform:      win32
+[debug] [2023-12-11T15:53:45.565Z] Node Version:  v20.10.0
+[debug] [2023-12-11T15:53:45.565Z] Time:          Mon Dec 11 2023 16:53:45 GMT+0100 (غرينتش+01:00)
+[debug] [2023-12-11T15:53:45.566Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-11T15:53:45.634Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-11T15:53:45.635Z] > authorizing via signed-in user (izili2022izili@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\lbira\Desktop\projet react\RajaShop
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-12-11T15:54:07.340Z] Using project from CLI flag: rajashop-dcfc9
+[debug] [2023-12-11T15:54:07.342Z] > refreshing access token with scopes: []
+[debug] [2023-12-11T15:54:07.344Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-12-11T15:54:07.344Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-11T15:54:07.619Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-12-11T15:54:07.620Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-11T15:54:07.627Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rajashop-dcfc9 [none]
+[debug] [2023-12-11T15:54:08.014Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rajashop-dcfc9 200
+[debug] [2023-12-11T15:54:08.014Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rajashop-dcfc9 {"projectId":"rajashop-dcfc9","projectNumber":"694433443060","displayName":"RajaShop","name":"projects/rajashop-dcfc9","resources":{"hostingSite":"rajashop-dcfc9","realtimeDatabaseInstance":"rajashop-dcfc9-default-rtdb","storageBucket":"rajashop-dcfc9.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_8a66e8eb-6bfd-4895-8380-ff4fe56fb79b"}
+[info] i  Using project rajashop-dcfc9 (RajaShop) 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2023-12-11T15:54:08.020Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rajashop-dcfc9/services/firebasedatabase.googleapis.com [none]
+[debug] [2023-12-11T15:54:08.020Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rajashop-dcfc9/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/rajashop-dcfc9
+[debug] [2023-12-11T15:54:09.124Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rajashop-dcfc9/services/firebasedatabase.googleapis.com 200
+[debug] [2023-12-11T15:54:09.125Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rajashop-dcfc9/services/firebasedatabase.googleapis.com [omitted]
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2023-12-11T15:54:09.131Z] >>> [apiv2][query] GET https://firebasedatabase.googleapis.com/v1beta/projects/rajashop-dcfc9/locations/-/instances/rajashop-dcfc9-default-rtdb [none]
+[debug] [2023-12-11T15:54:10.136Z] <<< [apiv2][status] GET https://firebasedatabase.googleapis.com/v1beta/projects/rajashop-dcfc9/locations/-/instances/rajashop-dcfc9-default-rtdb 200
+[debug] [2023-12-11T15:54:10.136Z] <<< [apiv2][body] GET https://firebasedatabase.googleapis.com/v1beta/projects/rajashop-dcfc9/locations/-/instances/rajashop-dcfc9-default-rtdb {"name":"projects/694433443060/locations/us-central1/instances/rajashop-dcfc9-default-rtdb","project":"projects/694433443060","databaseUrl":"https://rajashop-dcfc9-default-rtdb.firebaseio.com","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[info] 
+[info] Firebase Realtime Database Security Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[debug] [2023-12-11T15:54:21.540Z] >>> [apiv2][query] GET https://rajashop-dcfc9-default-rtdb.firebaseio.com/.settings/rules.json [none]
+[debug] [2023-12-11T15:54:21.978Z] <<< [apiv2][status] GET https://rajashop-dcfc9-default-rtdb.firebaseio.com/.settings/rules.json 200
+[debug] [2023-12-11T15:54:21.978Z] <<< [apiv2][body] GET https://rajashop-dcfc9-default-rtdb.firebaseio.com/.settings/rules.json [stream]
+[debug] [2023-12-11T15:54:22.189Z] Error: EISDIR: illegal operation on a directory, open 'C:\Users\lbira\Desktop\projet react\RajaShop\n'
+    at Object.openSync (node:fs:581:18)
+    at Object.writeFileSync (node:fs:2342:35)
+    at Object.createFileSync (C:\Users\lbira\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\fs-extra\lib\ensure\file.js:63:6)
+    at Config.writeProjectFile (C:\Users\lbira\AppData\Roaming\npm\node_modules\firebase-tools\lib\config.js:154:12)
+    at writeDBRules (C:\Users\lbira\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\database.js:33:12)
+    at doSetup (C:\Users\lbira\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\database.js:123:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async init (C:\Users\lbira\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\index.js:41:9)
+[error] 
+[error] Error: An unexpected error has occurred.

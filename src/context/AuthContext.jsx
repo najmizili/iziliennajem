@@ -54,10 +54,8 @@ export function AuthProvider({ children }) {
       const docRef = doc(db, `users/${nuevoUsuario.uid}`);
       await setDoc(docRef, { correo: email, admin: false });
 
-      // Establecer el displayName directamente al crear el usuario
       await updateProfile(nuevoUsuario, { displayName: nombre });
 
-      // Finalmente, actualizar el estado del usuario
       setUser(nuevoUsuario);
 
       return nuevoUsuario;
@@ -75,16 +73,13 @@ export function AuthProvider({ children }) {
         password
       );
       const currentUser = infoUsuario.user;
-      // Verificar el rol del usuario antes de actualizar el estado 'user'
       const docRef = doc(db, `users/${currentUser.uid}`);
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists() && docSnap.data().admin) {
-        // Si el usuario es administrador, redirige a la ruta de administrador
         setUser(currentUser);
         navigate("/admin");
       } else {
-        // Si no es administrador, redirige a otra ruta (puedes ajustar esto según tus necesidades)
         setUser(currentUser);
         navigate("/");
       }
@@ -101,12 +96,10 @@ export function AuthProvider({ children }) {
       const respuestaGoogle = new GoogleAuthProvider();
       const infoUsuario = await signInWithPopup(auth, respuestaGoogle);
 
-      // Crear un documento en la colección 'users' si no existe
       const userDocRef = doc(db, `users/${infoUsuario.user.uid}`);
       const userDocSnap = await getDoc(userDocRef);
 
       if (!userDocSnap.exists()) {
-        // El usuario no existe, crear un nuevo documento con la información del usuario
         await setDoc(userDocRef, {
           uid: infoUsuario.user.uid,
           email: infoUsuario.user.email,
@@ -115,18 +108,15 @@ export function AuthProvider({ children }) {
         });
       }
 
-      // Redirigir según el rol del usuario
       const adminCheckRef = doc(db, `admin/${infoUsuario.user.uid}`);
       const adminCheckSnap = await getDoc(adminCheckRef);
 
       if (adminCheckSnap.exists() && adminCheckSnap.data().admin) {
-        // Si el usuario es administrador, redirige a la ruta de administrador
         navigate("/admin");
       } else {
         navigate("/");
       }
 
-      // Establecer el usuario en el contexto
       setUser(infoUsuario.user);
 
       return infoUsuario.user;

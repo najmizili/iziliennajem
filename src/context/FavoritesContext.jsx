@@ -12,7 +12,6 @@ export const FavoritesProvider = ({ children }) => {
   const { user } = useAuth();
 
   useEffect(() => {
-    // Recuperar favoritos del localStorage al cargar la página
     const storedFavorites = localStorage.getItem(`favorites-${user?.uid}`);
     if (storedFavorites) {
       setFavorites(JSON.parse(storedFavorites));
@@ -29,7 +28,6 @@ export const FavoritesProvider = ({ children }) => {
     );
   };
 
-  // Actualizar localStorage cada vez que cambian los favoritos
   useEffect(() => {
     localStorage.setItem(`favorites-${user?.uid}`, JSON.stringify(favorites));
   }, [favorites, user]);
